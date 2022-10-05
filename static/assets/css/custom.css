@@ -1,0 +1,10 @@
+/*overwrite of add new styles to customize and modify adspot for your needs */
+
+select {
+    height: 42px;
+    border: 1px solid #e0e0e0;
+}
+input {
+    height: 42px;
+    border: 1px solid #e0e0e0;
+}

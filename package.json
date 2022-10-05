@@ -1,0 +1,25 @@
+{
+	"name": "acheinovalqueirev9",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-node": "^1.0.0-next.92",
+		"@sveltejs/kit": "next",
+		"svelte": "^3.44.0",
+		"vite": "^3.1.0"
+	},
+	"dependencies": {
+		"axios": "^0.27.2",
+		"express": "^4.18.1",
+		"svelte-seo": "^1.4.1",
+		"svelte-slidy": "^2.8.7",
+		"svelte-tags-input": "^3.0.0"
+	}
+}
