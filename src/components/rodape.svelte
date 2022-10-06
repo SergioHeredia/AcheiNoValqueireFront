@@ -7,10 +7,10 @@
                     <div class="col-xs-12 col-sm-6 col-md-5">
                         <form action="/" class="widget-subscribe-2">
                             <div class="labeled-input">
-                                <label>Entre com seu endereço de email</label>
+                                <label>Entre com seu endereço de e-mail</label>
                                 <input title="title here" type="email">
                             </div>
-                            <button class="btn btn-blue">Se Insrever</button>
+                            <button class="btn btn-blue">Se Insrever!</button>
                         </form>
                     </div>
                 </div>
