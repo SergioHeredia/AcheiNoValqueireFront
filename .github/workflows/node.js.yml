@@ -34,7 +34,7 @@ jobs:
       run: npm run build
       
     - name: Stop pm2
-      run: pm2 stop sveltekitnodedeploy
+      run: pm2 stop --name sveltekitnodedeploy
       if: ${{failure()}}
       
     - name: Start pm2
