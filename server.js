@@ -8,7 +8,7 @@ import path from 'path';
 const __dirname = path.resolve();
 
 const app = express();
-const PORT =  3333;
+const PORT =  3000;
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname);
