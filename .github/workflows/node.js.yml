@@ -35,6 +35,7 @@ jobs:
     - name: Stop pm2
       run: pm2 stop sveltekitnodedeploy
       
+      
     - name: Start pm2
       if: always()
       run: pm2 start server.js -f --name sveltekitnodedeploy 
