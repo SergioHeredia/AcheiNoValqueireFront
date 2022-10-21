@@ -12,8 +12,11 @@ export const post = async({ request }) => {
 
     try {
 
-        fs.writeFile("./src/infra/data/categorias.json", JSON.stringify(res), function(err, result) {
-            if(err) console.log('error', err);
+        //fs.writeFile("./src/infra/data/categorias.json", JSON.stringify(res), function(err, result) {
+        //    if(err) console.log('error', err);
+
+            fs.writeFile("./static/assets/categorias.json", JSON.stringify(res), function(err, result) {
+                if(err) console.log('error', err);
           });
     }catch(error)
     {
