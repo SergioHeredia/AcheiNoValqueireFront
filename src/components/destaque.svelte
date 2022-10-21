@@ -169,7 +169,7 @@ const slidy = {
 <div class="">
     <div class="container">
 
-    {#await Promise}
+    {#await ObterTodos(5,1,null,null,true,true)}
     <Aguarde />
     {:then}
         <header class="heading style2 text-center">

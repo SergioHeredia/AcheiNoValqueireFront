@@ -19,6 +19,8 @@ export const getObterTodos = async (ativo) => {
         categorias
       });
 
+      return categorias;
+
     } catch (error) {
       console.error(error);
     }

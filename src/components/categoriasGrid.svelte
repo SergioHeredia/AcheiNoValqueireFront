@@ -1,20 +1,40 @@
 
 <script>
 // @ts-nocheck
+    import { categorias } from "../routes/adm/categoria/components/categoria-store";
+    import { getObterTodos } from "../routes/adm/categoria/components/categoria-api";
+	import { onMount } from 'svelte';
+	import Aguarde from "../components/aguarde.svelte";
+	
 
-    
     //import data from '../infra/data/categorias.json';
-	import data from '../../static/assets/categorias.json';
 
-    const slides = data.map(function(row) {
-        return { id : row.id, src : row.nomeImg,figcaption:row.nome }
-        })
+	
+	let slides="";
+	onMount(async () => { 
+		let data = await getObterTodos(true);
+		
+		if (data.length!=0)
+		{
+			
+			slides = data.map(function(row) {
+			return { id : row.id, src : row.nomeImg,figcaption:row.nome }
+			})
+		}
+	});
+	
+
+    //const slides = data.map(function(row) {
+    //    return { id : row.id, src : row.nomeImg,figcaption:row.nome }
+    //    })
 
     import { Slidy } from "svelte-slidy";
+    
 
 
     const slidy = {
 		timeout: 0,
+		slides: [],
 		wrap: {
 			id: 'slidy',
 			width: '100%',
@@ -84,8 +104,17 @@
 		 </div>
 		 <div class="col-8">
 
-			<Slidy bind:index {...slidy} {slides} let:item>
+		
     
+
+			{#await getObterTodos(true)}
+            <Aguarde />
+            {:then}
+			
+				{#if ($categorias.length!=0)}
+					<Slidy bind:index {...slidy} {slides} let:item>
+
+               
 			
 				
 				<a href="#" on:click|preventDefault="{pesquisar(item.id)}">
@@ -105,6 +134,12 @@
 				
 			   
 			</Slidy>
+			{:else}
+					<p>Sem categorias</p>
+			{/if}
+		{:catch error}
+			<p style="color: red">{error.message}</p>
+		{/await}
 
 
 				
