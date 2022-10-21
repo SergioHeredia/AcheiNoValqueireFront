@@ -3,7 +3,8 @@
 // @ts-nocheck
 
     
-    import data from '../infra/data/categorias.json';
+    //import data from '../infra/data/categorias.json';
+	import data from '../../static/assets/categorias.json';
 
     const slides = data.map(function(row) {
         return { id : row.id, src : row.nomeImg,figcaption:row.nome }
