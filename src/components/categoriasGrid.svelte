@@ -11,8 +11,9 @@
 
 	
 	let slides="";
+	let data=""
 	onMount(async () => { 
-		let data = await getObterTodos(true);
+		data = await getObterTodos(true);
 		
 		if (data.length!=0)
 		{
@@ -111,7 +112,7 @@
             <Aguarde />
             {:then}
 			
-				{#if ($categorias.length!=0)}
+				{#if (data.length!=0)}
 					<Slidy bind:index {...slidy} {slides} let:item>
 
                
