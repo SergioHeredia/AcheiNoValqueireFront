@@ -19,15 +19,15 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
                         <div class="text-widget">
-                            <p>Fusce aliquet quam eget neque ultrices lla posuere felis id arcu blandit sagittis ellen ender purus.</p>
+                            <p>Encontre seu produto ou serviço no bairro.</p>
                             <div class="widget-social">
-                                <div class="social-links">
+                                <div >
                                     <ul>
-                                        <li><a href="#" class="fa fa-facebook"></a></li>
+                                        <!-- <li><a href="#" class="fa fa-facebook"></a></li>
                                         <li><a href="#" class="fa fa-twitter"></a></li>
-                                        <li><a href="#" class="fa fa-google-plus"></a></li>
-                                        <li><a href="#" class="fa fa-instagram"></a></li>
-                                        <li><a href="#" class="fa fa-dribbble"></a></li>
+                                        <li><a href="#" class="fa fa-google-plus"></a></li> -->
+                                        <li><a href="https://www.instagram.com/acheinovalqueire" class="fa-brands fa-square-instagram fa-3x" target="_blank"></a></li>
+                                        <!-- <li><a href="#" class="fa fa-dribbble"></a></li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -37,32 +37,32 @@
                         <div class="grid-list">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-md-3">
-                                    <ul>
+                                    <!-- <ul>
                                         <li><a href="#">Sobre Nós</a></li>
                                         <li><a href="#">Entre em contato</a></li>
                                         <li><a href="#">Comentários</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-3">
-                                    <ul>
+                                    <!-- <ul>
                                         <li><a href="#">Comunidade</a></li>
                                         <li><a href="#">Confiança e segurança</a></li>
                                         <li><a href="#">Ajuda e Suporte</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-3">
-                                    <ul>
+                                    <!-- <ul>
                                         <li><a href="#">Politica e Privacidade</a></li>
                                         <li><a href="/termosdeservicos">Termos de Serviços</a></li>
                                         <li><a href="#">PolíCotica de Cokie</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-3">
-                                    <ul>
+                                    <!-- <ul>
                                         <li><a href="#">Comunidade</a></li>
                                         <li><a href="#">Confiança e segurança</a></li>
                                         <li><a href="/testes">testes</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
                         </div>
