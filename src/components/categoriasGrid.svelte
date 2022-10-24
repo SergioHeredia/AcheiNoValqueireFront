@@ -1,7 +1,7 @@
 
 <script>
 // @ts-nocheck
-    import { categorias } from "../routes/adm/categoria/components/categoria-store";
+    
     import { getObterTodos } from "../routes/adm/categoria/components/categoria-api";
 	import { onMount } from 'svelte';
 	import Aguarde from "../components/aguarde.svelte";
@@ -108,7 +108,7 @@
 		
     
 
-			{#await getObterTodos(true)}
+			{#await Promise}
             <Aguarde />
             {:then}
 			

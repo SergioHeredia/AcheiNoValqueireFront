@@ -2,13 +2,24 @@
 
 // @ts-nocheck
 
+import { getObterTodos } from "../routes/adm/categoria/components/categoria-api";
+import { onMount } from 'svelte';
+import Aguarde from "../components/aguarde.svelte";
 
-import data from '../infra/data/categorias.json';
+//import data from '../infra/data/categorias.json';
 
 export let categoriaSelecionada="";
 export let oque="";
 
-import { goto } from '$app/navigation';
+
+	let data=""
+	onMount(async () => { 
+		data = await getObterTodos(true);
+		
+		
+	});
+
+
 
 function pesquisar()
 {
@@ -47,10 +58,32 @@ input[type=text] {
       <div class="col-md-4 col-sm-12">
                           <select bind:value={categoriaSelecionada} style="width: 100%; ">
                             <option selected value="">Todos</option>
-                            {#each data as  categoria}
-                                
-                                <option value="{categoria.id}">{categoria.nome}</option>
-                            {/each}
+
+                            {#await Promise}
+                                <Aguarde />
+                                {:then}
+                          
+                                {#if (data.length!=0)}
+
+                                    {#each data as  categoria}
+                                        <option value="{categoria.id}">{categoria.nome}</option>
+                                     {/each}
+                                  
+                                {:else}
+                                    <p>Sem categorias</p>
+                                {/if}
+                          {:catch error}
+                            <p style="color: red">{error.message}</p>
+                          {/await}
+
+
+
+
+
+
+
+
+                            
 
                              
                               
