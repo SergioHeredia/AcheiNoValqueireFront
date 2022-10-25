@@ -837,9 +837,10 @@
                                                 </div>
                                                 <div class="col-xs-12 col-md-9 ">
                                                    
-                                                    {#if descricao}
+                                                    
                                                     <TextEditor id="Descricao" texto="{descricao}"/>
-                                                    {/if}
+                                                    
+                                                    
                                                     
                                                         
                                                     
