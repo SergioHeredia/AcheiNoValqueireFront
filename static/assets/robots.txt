@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disalow: /adm
+Crawl-delay: 7
