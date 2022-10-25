@@ -837,10 +837,13 @@
                                                 </div>
                                                 <div class="col-xs-12 col-md-9 ">
                                                    
-                                                    
-                                                    <TextEditor id="Descricao" texto="{descricao}"/>
-                                                    
-                                                    
+                                                    {#if (Id=="novo")}
+                                                        <TextEditor id="Descricao" texto="{descricao}"/>
+                                                    {:else}
+                                                        {#if descricao}
+                                                        <TextEditor id="Descricao" texto="{descricao}"/>
+                                                        {/if}
+                                                    {/if}
                                                     
                                                         
                                                     
