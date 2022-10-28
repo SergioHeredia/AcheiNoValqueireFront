@@ -691,7 +691,7 @@
                     <div class="page row">
                         <header class="heading style-bg big text-center">
                             <h1>O <strong>Maior</strong> Classificado do Bairro</h1>
-                            <p class="text-uppercase">Vender e compar qualquer coisa</p>
+                            <p class="text-uppercase">Vender e comprar qualquer coisa</p>
                         </header>
                         <div class="form-wrapper">
 

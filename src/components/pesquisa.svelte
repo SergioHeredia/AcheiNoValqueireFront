@@ -55,7 +55,7 @@ input[type=text] {
 
 
 
-<form method="post">
+<form id="frmbusca" on:submit|preventDefault={pesquisar}>
     <div class="row ">
       <div class="col-md-4 col-sm-12">
                           <select bind:value={categoriaSelecionada} style="width: 100%; ">
