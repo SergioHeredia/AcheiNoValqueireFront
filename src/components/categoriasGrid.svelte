@@ -5,6 +5,8 @@
     import { getObterTodos } from "../routes/adm/categoria/components/categoria-api";
 	import { onMount } from 'svelte';
 	import Aguarde from "../components/aguarde.svelte";
+
+	import SvelteSeo from "svelte-seo";
 	
 
     //import data from '../infra/data/categorias.json';
@@ -31,7 +33,7 @@
 
     import { Slidy } from "svelte-slidy";
     
-
+		console.log(import.meta);
 
     const slidy = {
 		timeout: 0,
@@ -113,6 +115,30 @@
             {:then}
 			
 				{#if (data.length!=0)}
+
+				
+					{#each slides as categoria }
+						<SvelteSeo
+						openGraph={{
+							title: categoria.figcaption,
+							description: 'Categoria ' +  categoria.figcaption,
+							url: import.meta.env.VITE_baseURL + 'encontre?nacategoria=' + categoria.id.toString(),
+							type: 'website',
+							images: [
+							{
+								url: categoria.src,
+								width: 60,
+								height: 60,
+								alt: categoria.figcaption
+							}
+							]
+						}}
+						/>
+					{/each}
+
+
+
+
 					<Slidy bind:index {...slidy} {slides} let:item>
 
                

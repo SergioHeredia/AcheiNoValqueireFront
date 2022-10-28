@@ -19,7 +19,7 @@
 
 <SvelteSeo
 title="Achei no Valqueire"
-description="Melhor site de anuncios"
+description="Divulgue sua empresa, serviço, negócio, loja física ou virtual no bairro de Vila Valqueire e arredores e conquiste mais clientes. Anuncie aqui!"
 canonical = "{$page.url}"
 />
     
