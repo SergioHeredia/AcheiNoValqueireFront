@@ -33,7 +33,7 @@
 
     import { Slidy } from "svelte-slidy";
     
-		console.log(import.meta);
+		
 
     const slidy = {
 		timeout: 0,
