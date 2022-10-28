@@ -113,6 +113,18 @@
 			text: item
 		});
 	}	
+    let index = 0;
+
+    let play = true;
+	$: play ? slidyPlay() : clearInterval(timerPlay)
+	let playduration = 4000
+	let timerPlay
+	function slidyPlay() {
+		if (timerPlay !== null) {
+			clearInterval(timerPlay)
+		}
+		timerPlay = setInterval(() => index++, playduration)
+	}
 	
 </script>
 
@@ -155,7 +167,7 @@
                 {#if slides==null}
                     <img class="card-img-top" src="/assets/img/items/list-item-1.png" alt="Sem imagem" style="max-height: 200px;">
                 {:else}
-                    <Slidy {...slidy} {slides}  let:item > 
+                    <Slidy bind:index {...slidy} {slides}  let:item > 
                         <a
                             href="#_"
                             on:dragstart|preventDefault

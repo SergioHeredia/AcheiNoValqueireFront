@@ -3,10 +3,13 @@
 
 import axios from "axios";
 
+
 // Create a instance of axios to use the same base url.
 const axiosAPI = axios.create({
-  baseURL : "https://api.acheinovalqueire.com.br/api/" // it's not recommended to have this info here.
+  baseURL : import.meta.env.VITE_baseURL // it's not recommended to have this info here.
 });
+
+
 
 axios.defaults.withCredentials = true;
 

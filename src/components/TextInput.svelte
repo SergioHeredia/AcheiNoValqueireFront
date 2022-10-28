@@ -10,6 +10,7 @@
     export let valid = true;
     export let validityMessage = "";
     export let placeholder="";
+    export let maxlength="";
 
     
   
@@ -27,7 +28,7 @@
     {#if controlType === 'textarea'}
       <textarea class:invalid="{!valid && touched}" {rows} {id} bind:value on:blur={() => touched = true} {placeholder}/>
     {:else}
-      <input class:invalid="{!valid && touched}" type="text" {id} bind:value={value} on:input on:blur={() => touched = true} {placeholder}/>
+      <input class:invalid="{!valid && touched}" type="text" {id} bind:value={value} on:input on:blur={() => touched = true} {placeholder} {maxlength}/>
     {/if}
     {#if validityMessage && !valid && touched}
       <p class="error-message">{validityMessage}</p>

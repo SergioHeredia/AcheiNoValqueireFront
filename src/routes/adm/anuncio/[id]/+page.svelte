@@ -46,6 +46,7 @@
             //debugger;
         }
 
+        let disabelbutton = false;
 
         const countryList = [
         "Afghanistan",
@@ -58,7 +59,7 @@
         "Antarctica",
         "Antigua and Barbuda",
         "Argentina"
-    ];
+        ];
 
 
 
@@ -100,12 +101,13 @@
         let destaqueAtemonth, destaqueAteday, destaqueAteyear;
         let destaqueAtedateString="";
 
-
+        
         const  CarregaAnuncio = async () =>
         {
 
-          
-                 const res = await EdicaoObterPor(Id);
+                
+
+                const res = await EdicaoObterPor(Id);
            
 
 
@@ -242,6 +244,7 @@
 
         async function  submit(e)
         {
+            disabelbutton = true;
 
             var categoriaSelecionada_=null;
             if (categoriaSelecionada!="")
@@ -310,6 +313,8 @@
 
                     openModal();
 
+                    disabelbutton = false;
+
                     return;
                 }
 
@@ -319,6 +324,8 @@
             }
             else
             {
+                disabelbutton = true;
+
                 let _expiraEmdateString;
                 if (expiraEmdateString!="")
                     _expiraEmdateString=expiraEmdateString;
@@ -373,6 +380,8 @@
 
                     openModal();
 
+                    disabelbutton = false;
+
                     return;
                 }
 
@@ -390,6 +399,8 @@
 
             openModal();
 
+            disabelbutton = false;
+
             
         }
 
@@ -405,7 +416,7 @@
 
     const ExcluirImagem = async (imgid) =>
         {
-                         
+                disabelbutton = true;
 
                 var AnuncioImagemIn = {
                         "id": imgid
@@ -430,6 +441,8 @@
 
                     openModal();
 
+                    disabelbutton = false;
+
                     return;
                 }
 
@@ -439,7 +452,9 @@
                 messagesmodal = ["Excluido com sucesso!"];
 
                 openModal();
-                //debugger;
+
+                disabelbutton = false;
+               
 
 
                 avatar="";
@@ -454,7 +469,7 @@
         
         const PublicarAnuncio = async () =>
         {
-                         
+                disabelbutton = true;  
 
                 var AnuncioImagemIn = {
                         "id": Id
@@ -479,6 +494,8 @@
 
                     openModal();
 
+                    disabelbutton = false;
+
                     return;
                 }
 
@@ -488,6 +505,7 @@
                 messagesmodal = ["Publicado com sucesso!"];
 
                 openModal();
+                disabelbutton = false;
                 //debugger;
                 temPreview=false;
                 //CarregaAnuncio();
@@ -509,6 +527,8 @@
             //if (data.FileImg.size!=0) //Fez Upload
             //{
             //    console.log(data.FileImg.size);
+
+                disabelbutton = true;
 
                 var randomId = generateUUID();
 
@@ -543,6 +563,8 @@
 
                     openModal();
 
+                    disabelbutton = false;
+
                     return;
                 }
 
@@ -552,6 +574,8 @@
                 messagesmodal = ["Salvo com sucesso!"];
 
                 openModal();
+
+                disabelbutton = false;
                 //debugger;
 
 
@@ -685,8 +709,11 @@
                                         {/if}
                                             <div class="elements-block pull-right">
 
-                                                <button class="btn btn-green btn-mini" >Salvar</button>
-
+                                                {#if disabelbutton}
+                                                    <button class="btn btn-green btn-mini" disabled={disabelbutton} >Salvar</button>
+                                                {:else}
+                                                    <button class="btn btn-green btn-mini" >Salvar</button>
+                                                {/if}
                                             </div>
 
                                         <h4>Dados Anúncio</h4>
@@ -805,6 +832,7 @@
 
                                                     <TextInput
                                                         id="Titulo"
+                                                        maxlength="60"
                                                         valid={tituloValid}
                                                         validityMessage="Preencha o campo Título."
                                                         value={titulo}
@@ -856,7 +884,7 @@
                                                     <span class="label" >Endereço Físico</span>
                                                 </div>
                                                 <div class="col-xs-12 col-md-9">
-                                                    <input type="text" id="EnderecoFisico" bind:value="{enderecoFisico}" placeholder="ex. R. das Rosas, 227 - Sl 202 - Vila Valqueire, Rio de Janeiro - RJ, 21330-680">
+                                                    <input type="text" id="EnderecoFisico" bind:value="{enderecoFisico}" placeholder="ex. R. das Rosas, 227 - Sl 202 - Vila Valqueire, Rio de Janeiro - RJ, 21330-680" maxlength="500">
                                                 </div>
                                             </div>
 
@@ -867,7 +895,7 @@
                                                 <div class="col-xs-12 col-md-9">
                                                     <div class="icon-field">
                                                         <span>+55</span>
-                                                        <input class="input-sm" type="tel" id="Telefone1" placeholder="ex. 21 98722-2222" bind:value={telefone1}>
+                                                        <input class="input-sm" type="tel" id="Telefone1" placeholder="ex. 21 98722-2222" bind:value={telefone1} maxlength="15">
                                                     </div>
                                                     <input  type="checkbox" value="" id="Telefone1EhWhatsapp" bind:checked={telefone1EhWhatsapp}> <span class="fa-brands fa-whatsapp" style="position: relative;top: -15px;"></span>
                                                 </div>
@@ -882,7 +910,7 @@
                                                 <div class="col-xs-12 col-md-9">
                                                     <div class="icon-field">
                                                         <span>+55</span>
-                                                        <input class="input-sm" type="tel" id="Telefone2" bind:value={telefone2} placeholder="ex. 219872-22222">
+                                                        <input class="input-sm" type="tel" id="Telefone2" bind:value={telefone2} placeholder="ex. 219872-22222" maxlength="15">
                                                     </div>
                                                     <input  type="checkbox" value="" id="Telefone2EhWhatsapp" bind:checked={telefone2EhWhatsapp} > <span class="fa-brands fa-whatsapp" style="position: relative;top: -15px;"></span>
                                                 </div>
@@ -893,7 +921,7 @@
                                                     <span class="label" >Email</span>
                                                 </div>
                                                 <div class="col-xs-12 col-md-9">
-                                                    <input class="input-sm" type="email" id="Email" bind:value="{email}" placeholder="ex. jon@got.com">
+                                                    <input class="input-sm" type="email" id="Email" bind:value="{email}" placeholder="ex. jon@got.com"  maxlength="100">
                                                 </div>
                                             </div>
 
@@ -902,7 +930,7 @@
                                                     <span class="fa-solid fa-earth-americas"></span><span class="label" >- Site</span>
                                                 </div>
                                                 <div class="col-xs-12 col-md-9">
-                                                    <input type="text" id="Site" bind:value="{site}" placeholder="">
+                                                    <input type="text" id="Site" bind:value="{site}" placeholder="" maxlength="100">
                                                 </div>
                                             </div>
 
@@ -911,7 +939,7 @@
                                                     <span class="fa-brands fa-facebook"></span><span class="label" >- Facebook</span>
                                                 </div>
                                                 <div class="col-xs-12 col-md-9">
-                                                    <input type="text" id="Facebook" bind:value="{facebook}" placeholder="">
+                                                    <input type="text" id="Facebook" bind:value="{facebook}" placeholder=""  maxlength="100">
                                                 </div>
                                             </div>
                                             <div class="row field-block">
@@ -919,7 +947,7 @@
                                                     <span class="fa-brands fa-square-instagram"></span><span class="label" >- Instagram</span>
                                                 </div>
                                                 <div class="col-xs-12 col-md-9">
-                                                    <input type="text" id="Instagram" bind:value="{instagram}" placeholder="">
+                                                    <input type="text" id="Instagram" bind:value="{instagram}" placeholder=""  maxlength="100">
                                                 </div>
                                             </div>
                                             <div class="row field-block">
@@ -927,7 +955,7 @@
                                                     <span class="fa-brands fa-twitter"></span><span class="label" >- twitter</span>
                                                 </div>
                                                 <div class="col-xs-12 col-md-9">
-                                                    <input type="text" id="twitter" bind:value="{twitter}" placeholder="">
+                                                    <input type="text" id="twitter" bind:value="{twitter}" placeholder=""  maxlength="100">
                                                 </div>
                                             </div>
                                             <div class="row field-block">
@@ -937,7 +965,7 @@
                                                                         </svg>- Tiktok</span>
                                                 </div>
                                                 <div class="col-xs-12 col-md-9">
-                                                    <input type="text" id="Tiktok" bind:value="{tiktok}" placeholder="">
+                                                    <input type="text" id="Tiktok" bind:value="{tiktok}" placeholder=""  maxlength="100">
                                                 </div>
                                             </div>
                                             <div class="row field-block">
@@ -963,7 +991,7 @@
                                                     <span class="fa-brands fa-youtube"></span><span class="label fa fa-youtube-play">- Youtube</span>
                                                 </div>
                                                 <div class="col-xs-12 col-md-9">https://www.youtube.com/watch?v=xxxxxxxxxx
-                                                    <input type="text" id="Youtube" bind:value="{youtube}" placeholder="Digite o código do vídeo representado acima com a letra xxxxxxxx.">
+                                                    <input type="text" id="Youtube" bind:value="{youtube}" placeholder="Digite o código do vídeo representado acima com a letra xxxxxxxx."  maxlength="100">
 
 
                                                 </div>
@@ -996,7 +1024,14 @@
                                                 </div>
                                                 <div class="row field-block">
                                                     <div class="col-xs-12 col-md-3">
-                                                        <button class="btn btn-green btn-mini" on:click|preventDefault={SalvarImagem}>Salvar Imagem</button>
+
+                                                        {#if disabelbutton}
+                                                            <button class="btn btn-green btn-mini" on:click|preventDefault={SalvarImagem} disabled={disabelbutton}>Salvar Imagem</button>
+                                                        {:else}
+                                                            <button class="btn btn-green btn-mini" on:click|preventDefault={SalvarImagem}>Salvar Imagem</button>
+                                                        {/if}
+
+                                                        
                                                     </div>
                                                 </div>
                                                 {/if}
@@ -1080,8 +1115,13 @@
                                     </div>
 
                                     <div class="elements-block pull-right">
-                                       
-                                        <button class="btn btn-green btn-mini" >Salvar</button>
+                                        {#if disabelbutton}
+                                            <button class="btn btn-green btn-mini" disabled={disabelbutton} >Salvar</button>
+                                        {:else}
+                                            <button class="btn btn-green btn-mini" >Salvar</button>
+                                        {/if}
+
+                                        
 
                                     </div>
 

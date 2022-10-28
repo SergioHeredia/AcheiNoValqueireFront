@@ -19,7 +19,9 @@ export let oque="";
 		
 	});
 
-
+  const onKeyPress = e => {
+    if (e.charCode === 13) pesquisar();
+  };
 
 function pesquisar()
 {
@@ -76,14 +78,7 @@ input[type=text] {
                             <p style="color: red">{error.message}</p>
                           {/await}
 
-
-
-
-
-
-
-
-                            
+    
 
                              
                               
@@ -91,7 +86,7 @@ input[type=text] {
                           </select>
         </div>
         <div class="col-md-7 col-sm-10">
-                          <input type="text" Id="txtPresquisa" bind:value="{oque}" placeholder="Pesquisar" style="width: 100%; " />
+                          <input type="text" Id="txtPresquisa" bind:value="{oque}" placeholder="Pesquisar" style="width: 100%;" on:keypress={onKeyPress}/>
         </div>   
         <div class="col-md-1 col-sm-2">          
                           <span class ="btn btn-green fa-solid fa-magnifying-glass" on:click|preventDefault="{pesquisar}"></span> 
