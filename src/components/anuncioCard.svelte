@@ -75,9 +75,12 @@
             nomeImgCategoria = res.nomeImg;
 
 
-
-        const res2 = await ObterSubPor(subCategoriaId);
-            nomeSubCategoria = res2.nome;
+        let res2;
+        if (subCategoriaId!=null)
+        {
+            res2 = await ObterSubPor(subCategoriaId);
+                nomeSubCategoria = res2.nome;
+        }
 
 
 
@@ -95,19 +98,11 @@
         
     })
 
-            let img = {},
-			isModal = false;
+            
 
     function openModal(item) {
         
-		//img = item
-		//isModal = true
-        //console.log('aqui1');
-
-        //dispatch('openModal',  {item} );
-
-        //console.log(item);
-
+	
 
         dispatch('message', {
 			text: item
@@ -167,15 +162,15 @@
                 {#if slides==null}
                     <img class="card-img-top" src="/assets/img/items/list-item-1.png" alt="Sem imagem" style="max-height: 200px;">
                 {:else}
-                    <Slidy bind:index {...slidy} {slides}  let:item > 
-                        <a
-                            href="#_"
+                    <Slidy bind:index {...slidy} {slides}  let:item> 
+                        <div style="cursor: pointer"
+                            
                             on:dragstart|preventDefault
                             on:mousemove|preventDefault
                             on:mouseup|preventDefault
                             on:click={openModal(item.img)}>
-                                    <img class="card-img-top" src="{item.img}" alt="{item.img}" style="max-height: 200px;">
-                        </a>
+                                    <img class="card-img-top" src="{item.img}" alt="{item.img}" width="20px" height="20px" style="max-height: 200px;" >
+                    </div>
                     </Slidy>
                     
                 {/if}
