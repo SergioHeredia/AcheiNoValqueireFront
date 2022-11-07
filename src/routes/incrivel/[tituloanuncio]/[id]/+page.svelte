@@ -58,7 +58,7 @@
         },
         };
 
-        // export let id;
+        
          export let titulo;
          let subTitulo;
          let descricao;
@@ -299,15 +299,14 @@
                                                                 <img class="card-img-top" src="/assets/img/items/list-item-1.png" alt="Sem imagem" >
                                                                 {:else}
                                                                 <Slidy bind:index {...slidy} {slides}  let:item > 
-                                                                        <a
-                                                                        href="#_"
-                                                                        on:dragstart|preventDefault
-                                                                        on:mousemove|preventDefault
-                                                                        on:mouseup|preventDefault
-                                                                        on:click={openModal(item.img)}
-                                                                        >
-                                                                                <img class="card-img-top" src="{item.img}" alt="{item.img}" style="max-height: 475px;">
-                                                                        </a>
+                                                                        <div style="cursor: pointer"
+                                                                                on:dragstart|preventDefault
+                                                                                on:mousemove|preventDefault
+                                                                                on:mouseup|preventDefault
+                                                                                on:click={openModal(item.img)}
+                                                                                >
+                                                                                        <img class="card-img-top" src="{item.img}" alt="{item.img}" style="max-height: 475px;">
+                                                                        </div>
                                                                 </Slidy>
                                                                 
                                                                 {/if}

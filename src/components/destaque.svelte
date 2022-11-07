@@ -169,7 +169,7 @@ const slidy = {
 <div class="">
     <div class="container">
 
-    {#await ObterTodos(5,1,null,null,true,true)}
+    {#await Promise}
     <Aguarde />
     {:then}
         <header class="heading style2 text-center">
@@ -207,7 +207,8 @@ const slidy = {
                     subCategoriaId={anuncio.subCategoriaId}
                     site={anuncio.site}
                     facebook={anuncio.facebook}
-                    instagram={anuncio.instagram}></AnuncioCard>
+                    instagram={anuncio.instagram}
+                    on:message={openModal}></AnuncioCard>
             
                 </div>
 

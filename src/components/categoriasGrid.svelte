@@ -8,9 +8,6 @@
 
 	import SvelteSeo from "svelte-seo";
 	
-
-    //import data from '../infra/data/categorias.json';
-
 	
 	let slides="";
 	let data=""
@@ -27,9 +24,6 @@
 	});
 	
 
-    //const slides = data.map(function(row) {
-    //    return { id : row.id, src : row.nomeImg,figcaption:row.nome }
-    //    })
 
     import { Slidy } from "svelte-slidy";
     
@@ -147,7 +141,7 @@
 				<a href="#" on:click|preventDefault="{pesquisar(item.id)}">
 					<div class="card text-center justify-content-center">
 						<div class="card-header justify-content-center">
-							<img src="{item.src}" class="mx-auto d-block" alt="{item.figcaption}" style="width: 60px; height: 60px;">
+							<img src="{item.src}" class="mx-auto d-block" alt="{item.figcaption}" width="60px" height="60px" style="width: 60px; height: 60px;">
 						</div>
 						<div class="card-body">
 									

@@ -55,7 +55,7 @@ input[type=text] {
 
 
 
-<form id="frmbusca" on:submit|preventDefault={pesquisar}>
+<form on:submit|preventDefault={pesquisar}>
     <div class="row ">
       <div class="col-md-4 col-sm-12">
                           <select bind:value={categoriaSelecionada} style="width: 100%; ">
@@ -71,8 +71,7 @@ input[type=text] {
                                         <option value="{categoria.id}">{categoria.nome}</option>
                                      {/each}
                                   
-                                {:else}
-                                    <p>Sem categorias</p>
+                                
                                 {/if}
                           {:catch error}
                             <p style="color: red">{error.message}</p>
@@ -86,7 +85,7 @@ input[type=text] {
                           </select>
         </div>
         <div class="col-md-7 col-sm-10">
-                          <input type="text" Id="txtPresquisa" bind:value="{oque}" placeholder="Pesquisar" style="width: 100%;" on:keypress={onKeyPress}/>
+                          <input type="text"  bind:value="{oque}" placeholder="Pesquisar" style="width: 100%;" on:keypress={onKeyPress}/>
         </div>   
         <div class="col-md-1 col-sm-2">          
                           <span class ="btn btn-green fa-solid fa-magnifying-glass" on:click|preventDefault="{pesquisar}"></span> 
