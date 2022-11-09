@@ -13,9 +13,14 @@
 
     let ativo = true;
     let destaque = false;
+    let Producao = true;
 
     function handleAtivo() {
         ativo = !ativo;
+
+    }
+    function handleProducao() {
+        Producao = !Producao;
 
     }
     function handleDestaque() {
@@ -27,7 +32,7 @@
         {
 
             
-            await ObterTodosCompleto(6,1,txtPesquisa,categoriaSelecionada, ativo,destaque);
+            await ObterTodosCompleto(1000,1,txtPesquisa,categoriaSelecionada, ativo,destaque,false,Producao);
 
             
         }
@@ -43,18 +48,27 @@
     <div class="elements-block">
         
             <div class="listing-actions  clearfix" data-target="#items-listing-area">
+                        
+                        
                         <div class="inner">
-                            <div class="button-action">
+                            <div class="button-action w-100">
                                 <span>Ativo</span>
                                 <a href="#" on:click|preventDefault="{handleAtivo}" class="active" ><i  class="fa"></i></a>
                             </div>
+
+                            <div class="button-action w-100">
+                                <span>Produção</span>
+                                <a href="#" on:click|preventDefault="{handleProducao}" class="active" ><i  class="fa"></i></a>
+                            </div>
+                            
                            
-                            <div class="search-action">
-                                <a href="#" class="" on:click|preventDefault="{handleDestaque}"><i class="fa fa-star-o"></i>
-                                    <span class="tooltip">Destaque</span>
+                            <div class="button-action w-100">
+                                <span>Destaque</span>
+                                <a href="#"  on:click|preventDefault="{handleDestaque}" class=""><i class="fa fa-star-o"></i>
+                                    
                                 </a>
                             </div>
-
+                        </div>
                                         
                                         <select id="CategoriaId" bind:value={categoriaSelecionada}  class="" >
                                             {#await getObterTodos(true)}
@@ -86,7 +100,7 @@
 
                             
                         
-                        </div>
+                        
             
             </div>
     </div>

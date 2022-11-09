@@ -75,14 +75,14 @@ export const Publicar = async(data) => {
 
 
 
-export const ObterTodosCompleto = async (pageSize,pageIndex,query=null,categoriaId=null,ativo=true,destaque=false) => {
+export const ObterTodosCompleto = async (pageSize,pageIndex,query=null,categoriaId=null,ativo=true,destaque=false,aleatorio=false,producao=true) => {
   try {
 
     store.set({
       ...INITIAL_STATE,
     });
 
-    const anuncios = await Api.get("v1/adm/anuncio?pageSize=" + pageSize + "&pageIndex=" + pageIndex + "&query=" + query + "&categoriaId=" + categoriaId + "&ativo=" + ativo + "&destaque=" + destaque,null);
+    const anuncios = await Api.get("v1/adm/anuncio?pageSize=" + pageSize + "&pageIndex=" + pageIndex + "&query=" + query + "&categoriaId=" + categoriaId + "&ativo=" + ativo + "&destaque=" + destaque + "&aleatorio=" + aleatorio + "&producao=" + producao,null);
     //debugger;
 
     store.set({
@@ -127,3 +127,18 @@ export const  ImagemProducao = async (anuncioid) => {
 };
 
 
+
+export const ObterTotalPor = async (categoriaId=null,producao=true) => {
+  try {
+
+  
+
+    const data = await Api.get("v1/adm/anuncio/obter-total-por?categoriaId=" + categoriaId + "&producao=" + producao);
+    return data
+
+
+   
+  } catch (error) {
+    return error;
+  }
+};

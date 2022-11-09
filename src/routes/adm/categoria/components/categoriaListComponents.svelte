@@ -11,11 +11,6 @@
     import CategoriaCard from "../components/categoriaCardComponents.svelte"; 
 
     
-
-    
-
-
-    //getObterTodos();
 </script>
 
 
