@@ -24,12 +24,24 @@ if (PreviousPageIndex!=null) PageIndex = PreviousPageIndex;
 import Aguarde from "../../components/aguarde.svelte";
 import { ObterTodos } from "../../components/anuncio-api";
 
+import SvelteSeo from "svelte-seo";
 
 import AnuncioList from "../../components/anuncioList.svelte";
 
 
 </script>
 
+<svelte:head>
+	<title>Encontre o que precisa no bairro</title>
+</svelte:head>
+
+
+
+<SvelteSeo
+title="Encontre o que precisa no bairro"
+description="Divulgue sua empresa, serviço, negócio, loja física ou virtual no bairro de Vila Valqueire e arredores e conquiste mais clientes. Anuncie aqui!"
+canonical = "{$page.url}"
+/>
 
 <div class="app-canvas">
     <div class="container p-2">

@@ -2,7 +2,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-7">
-                        <a href="/"><img src="/assets/img/basic/logomenor.png" alt="adspotlogo" width="116px" height="75px"></a>
+                        <a href="/"><img src="/assets/img/basic/logomenor.png" alt="adspotlogo" width="116" height="75"></a>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-5">
                         <form action="/" class="widget-subscribe-2">

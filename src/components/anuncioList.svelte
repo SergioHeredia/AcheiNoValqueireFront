@@ -5,6 +5,8 @@ import AnuncioCard from "../components/anuncioCard.svelte";
 
 import { store} from "../components/anuncio-store"
 
+
+
 export let oque;
 export let nacategoria; 
 
@@ -45,8 +47,11 @@ function PreviousPageIndex()
                         subCategoriaId={anuncio.subCategoriaId}
                         site={anuncio.site}
                         facebook={anuncio.facebook}
-                        instagram={anuncio.instagram}></AnuncioCard>
+                        instagram={anuncio.instagram}
+                        tags={anuncio.tags}></AnuncioCard>
                     </div>
+
+                    
                 {/each}
                 <div class="col"></div>
             </div>

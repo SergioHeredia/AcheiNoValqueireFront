@@ -523,3 +523,14 @@
     {:catch error}
     <p style="color: red">{error.message}</p>
 {/await}
+
+
+
+
+
+
+<svelte:head>
+	<title>{titulo}</title>
+</svelte:head>
+
+

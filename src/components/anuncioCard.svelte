@@ -9,6 +9,7 @@
     import {ObterPor} from "../components/categoria-api"
     import {ObterPor as ObterSubPor} from "../components/subcategoria-api"
     import {ImagemProducao} from "../components/anuncio-api"
+    import SvelteSeo from "svelte-seo";
 
     import { Slidy } from "svelte-slidy";
 
@@ -59,6 +60,7 @@
     export let site;
     export let instagram;
     export let facebook;
+    export let tags;
 
 
     let nomeCategoria;
@@ -247,6 +249,15 @@
             </div>
         </div>
    
+
+        <SvelteSeo
+                    title="{titulo}"
+                    description="{subTitulo}"
+                    canonical =  {import.meta.env.VITE_baseURL + "incrivel/{titulo.toLowerCase().replaceAll(' ', '-')}/{id}"}
+                    keywords={tags}
+                    
+                    
+                    />
 
 
 

@@ -8,3 +8,6 @@ input {
     height: 42px;
     border: 1px solid #e0e0e0;
 }
+h1 {
+    font-size: 40px;
+}
