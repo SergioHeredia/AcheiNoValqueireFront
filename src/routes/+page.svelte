@@ -28,12 +28,12 @@ canonical = "{$page.url}"
 
 
 <section>
-  <div style="height: 450px;background: url('/assets/img/basic/fundobanner.png') center / cover;">
+  <div style="background: url('/assets/img/basic/fundobanner.png') center / cover;">
       <section class="position-relative py-4 py-xl-5 ">
           <div class="container position-relative ">
               <div class="row d-flex justify-content-center ">
                   <div class="col-md-12 col-lg-10 col-xl-8 col-xxl-6 ">
-                      <div class="card mb-12 " style="border-radius: 4px;opacity: 0.9;">
+                      <div class="card mb-12 h-100 d-inline-block  " style="border-radius: 4px;opacity: 0.9;">
                           <PesquisaLogo />
                       </div>
                   </div>
@@ -41,7 +41,7 @@ canonical = "{$page.url}"
           </div>
       </section>
   </div>
-  <div class="container h-100 position-relative" style="top: -100px; opacity: 0.9; ">
+  <div class="container h-100 " >
       <div class="row ">
           <div class="col">
               <div class="card" style="border-radius: 4px;">
