@@ -67,6 +67,8 @@
     let nomeImgCategoria;
     let nomeSubCategoria;
 
+    
+
 
     let slides;
 
@@ -122,6 +124,8 @@
 		}
 		timerPlay = setInterval(() => index++, playduration)
 	}
+
+    let canonical = import.meta.env.VITE_baseURL + "incrivel/" + titulo.toLowerCase().replaceAll(' ', '-') + "/" + id;
 	
 </script>
 
@@ -253,7 +257,7 @@
         <SvelteSeo
                     title="{titulo}"
                     description="{subTitulo}"
-                    canonical =  {import.meta.env.VITE_baseURL + "incrivel/{titulo.toLowerCase().replaceAll(' ', '-')}/{id}"}
+                    canonical =  "{canonical}"
                     keywords={tags}
                     
                     
