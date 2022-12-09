@@ -191,6 +191,10 @@
                 text-decoration: none;
         }
 
+        h1 {
+                font-size: 30px;
+        }
+
         #modal {
 
         background: rgba(0,0,0,0.27);
@@ -285,7 +289,7 @@
                                         <div class="row" style="background-color: white;margin-bottom: 10px;">
                                                 <div class="col-12">
 
-                                                        <h5 class="fa mt-5">{titulo}</h5>
+                                                        <h1 class="text-uppercase mt-5">{titulo}</h1>
                                                 </div>
                                                 <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
                                                         
@@ -387,6 +391,8 @@
                                                         </div>
                                                         <div class="col-12 text-center">
                                                                 
+                                                                
+
                                                                 {#if site!="" && site!=null}
                                                                 <a href="{site}" class="fa-solid fa-earth-americas fa-2x"> 
                                                                         </a>
@@ -439,6 +445,7 @@
                                                                                                         <li class="fa-brands fa-whatsapp fa-2x"> </li>
                                                                                                                 {telefone1}
                                                                                                 </em>
+                                                                                                <a class="btn btn-green btn-mini" target="_blank" href="https://api.whatsapp.com/send?phone={telefone1}&text=Oi">Mensagem</a>
                                                                                         </p>
                                                                                         
                                                                                 {:else}
