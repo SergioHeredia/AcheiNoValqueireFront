@@ -85,3 +85,76 @@ export const ObterPor = async (id) => {
     return error;
   }
 };
+
+export const TotalViewTelefone = async (data) => {
+  try {
+    const response = await Api.put("v1/anuncio/totalviewtelefone",data);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const TotalClickTelefone1 = async (data) => {
+  try {
+    const response = await Api.put("v1/anuncio/totalclicktelefone1",data);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const TotalClickTelefone2 = async (data) => {
+  try {
+    const response = await Api.put("v1/anuncio/totalclicktelefone2",data);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const TotalClickFacebook = async (data) => {
+  try {
+    const response = await Api.put("v1/anuncio/totalclickfacebook",data);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const TotalClickInstagram = async (data) => {
+  try {
+    const response = await Api.put("v1/anuncio/totalclickinstagram",data);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+
+export const TotalClickSite = async (data) => {
+  try {
+    const response = await Api.put("v1/anuncio/totalclicksite",data);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const TotalClickTiktok = async (data) => {
+  try {
+    const response = await Api.put("v1/anuncio/totalclicktiktok",data);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const TotalClickTwitter = async (data) => {
+  try {
+    const response = await Api.put("v1/anuncio/totalclicktwitter",data);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};

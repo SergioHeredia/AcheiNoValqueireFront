@@ -12,7 +12,7 @@
         import {ObterPor as ObterSubPor} from "../../../../components/subcategoria-api"
        
         import { scale, fade } from 'svelte/transition';
-        import {ImagemProducao,ObterPor} from "../../../../components/anuncio-api"
+        import {ImagemProducao,ObterPor,TotalViewTelefone,TotalClickTelefone1,TotalClickTelefone2,TotalClickFacebook,TotalClickInstagram,TotalClickSite,TotalClickTiktok,TotalClickTwitter} from "../../../../components/anuncio-api"
         //import { onMount } from 'svelte';
         import Aguarde from "../../../../components/aguarde.svelte";
 
@@ -181,6 +181,112 @@
 		}
 		timerPlay = setInterval(() => index++, playduration)
 	}
+
+        let vercontato = false;
+
+        const VerContato = async () =>
+        {
+                if (!vercontato) vercontato=true;
+
+                var AnuncioIn = {
+                        "id": Id
+                        }
+
+
+
+                const res = await TotalViewTelefone(AnuncioIn);
+        }
+
+        const ClickContato1 = async () =>
+        {
+                if (!vercontato) vercontato=true;
+
+                var AnuncioIn = {
+                        "id": Id
+                        }
+
+                const res = await TotalClickTelefone1(AnuncioIn);
+
+                window.open("https://api.whatsapp.com/send?phone=" +telefone1 + "&text=Oi","_blank")
+        }
+
+        const ClickContato2 = async () =>
+        {
+                if (!vercontato) vercontato=true;
+
+                var AnuncioIn = {
+                        "id": Id
+                        }
+
+                const res = await TotalClickTelefone2(AnuncioIn);
+
+                window.open("https://api.whatsapp.com/send?phone=" +telefone2 + "&text=Oi","_blank")
+        }
+
+        const ClickFacebook = async () =>
+        {
+                if (!vercontato) vercontato=true;
+
+                var AnuncioIn = {
+                        "id": Id
+                        }
+
+                const res = await TotalClickFacebook(AnuncioIn);
+
+                window.open(facebook,"_blank")
+        }
+
+        const ClickInstagram = async () =>
+        {
+                if (!vercontato) vercontato=true;
+
+                var AnuncioIn = {
+                        "id": Id
+                        }
+
+                const res = await TotalClickInstagram(AnuncioIn);
+
+                window.open(instagram,"_blank")
+        }
+
+        const ClickSite = async () =>
+        {
+                if (!vercontato) vercontato=true;
+
+                var AnuncioIn = {
+                        "id": Id
+                        }
+
+                const res = await TotalClickSite(AnuncioIn);
+
+                window.open(site,"_blank")
+        }
+
+        const ClickTiktok = async () =>
+        {
+                if (!vercontato) vercontato=true;
+
+                var AnuncioIn = {
+                        "id": Id
+                        }
+
+                const res = await TotalClickTiktok(AnuncioIn);
+
+                window.open(tiktok,"_blank")
+        }
+
+        const ClickTwitter = async () =>
+        {
+                if (!vercontato) vercontato=true;
+
+                var AnuncioIn = {
+                        "id": Id
+                        }
+
+                const res = await TotalClickTwitter(AnuncioIn);
+
+                window.open(twitter,"_blank")
+        }
 
 </script>
 
@@ -394,7 +500,7 @@
                                                                 
 
                                                                 {#if site!="" && site!=null}
-                                                                <a href="{site}" class="fa-solid fa-earth-americas fa-2x"> 
+                                                                <a href="{site}" on:click|preventDefault={ClickSite} class="fa-solid fa-earth-americas fa-2x"> 
                                                                         </a>
                                                                 {:else}
                                                                 <span class="fa-solid fa-earth-americas fa-2x"> 
@@ -402,7 +508,7 @@
                                                                 {/if}
 
                                                                 {#if instagram!="" && instagram!=null}
-                                                                <a href="{instagram}" class="fa-brands fa-square-instagram fa-2x ">
+                                                                <a href="{instagram}" on:click|preventDefault={ClickInstagram} class="fa-brands fa-square-instagram fa-2x ">
                                                                 </a>
                                                                 {:else}
                                                                 <span class="fa-brands fa-square-instagram fa-2x "> 
@@ -410,21 +516,21 @@
                                                                 {/if}
 
                                                                 {#if facebook!="" && facebook!=null}
-                                                                <a href="{facebook}" class="fa-brands fa-facebook fa-2x  tooltip-parent"> 
+                                                                <a href="{facebook}" on:click|preventDefault={ClickFacebook} class="fa-brands fa-facebook fa-2x  tooltip-parent"> 
                                                                         </a>
                                                                 {:else} 
                                                                 <span class="fa-brands fa-facebook fa-2x tooltip-parent"> 
                                                                 </span>
                                                                 {/if}
                                                                 {#if twitter!="" && twitter!=null}
-                                                                <a href="{twitter}" class="fa-brands fa-twitter fa-2x  tooltip-parent"> 
+                                                                <a href="{twitter}" on:click|preventDefault={ClickTwitter} class="fa-brands fa-twitter fa-2x  tooltip-parent"> 
                                                                         </a>
                                                                 {:else} 
                                                                 <span class="fa-brands fa-twitter fa-2x totwitteroltip-parent"> 
                                                                 </span>
                                                                 {/if}
                                                                 {#if tiktok!="" && tiktok!=null}
-                                                                <a href="{tiktok}" class="fa-brands fa-tiktok fa-2x  tooltip-parent"> 
+                                                                <a href="{tiktok}" on:click|preventDefault={ClickTiktok} class="fa-brands fa-tiktok fa-2x  tooltip-parent"> 
                                                                         </a>
                                                                 {:else} 
                                                                 <span class="fa-brands fa-tiktok fa-2x tooltip-parent"> 
@@ -436,46 +542,51 @@
                                                         <p></p>
                                                         {#if telefone1!="" && telefone1!=null}
                                                                 <div class="col-12">
-                                                                        <h5><strong>Telefones:</strong></h5>
-                                                                        
-                                                                        <ul>
-                                                                                {#if telefone1EhWhatsapp!="" && telefone1EhWhatsapp!=null}
-                                                                                <p> 
-                                                                                                <em>
-                                                                                                        <li class="fa-brands fa-whatsapp fa-2x"> </li>
-                                                                                                                {telefone1}
-                                                                                                </em>
-                                                                                                <a class="btn btn-green btn-mini" target="_blank" href="https://api.whatsapp.com/send?phone={telefone1}&text=Oi">Mensagem</a>
-                                                                                        </p>
-                                                                                        
-                                                                                {:else}
+                                                                        {#if (vercontato)}
+                                                                                <h5><strong>Telefones:</strong></h5>
+                                                                                
+                                                                                <ul>
+                                                                                        {#if telefone1EhWhatsapp!="" && telefone1EhWhatsapp!=null}
                                                                                         <p> 
-                                                                                                <em>
-                                                                                                <li class="fa fa-phone-alt fa-2x"> </li>
-                                                                                                        {telefone1}
-                                                                                                </em>
-                                                                                        </p>
-                                                                                        
-                                                                                {/if}
-                                                                                {#if telefone2!="" && telefone2!=null}
-                                                                                        {#if telefone2EhWhatsapp!="" && telefone2EhWhatsapp!=null}
-                                                                                        <p> 
-                                                                                                <em>
-                                                                                                        <li class="fa-brands fa-whatsapp fa-2x"> </li>
-                                                                                                                {telefone2}
+                                                                                                        <em>
+                                                                                                                <li class="fa-brands fa-whatsapp fa-2x"> </li>
+                                                                                                                        {telefone1}
                                                                                                         </em>
+                                                                                                        <button class="btn btn-green btn-mini" on:click|preventDefault={ClickContato1}>Mensagem</button>
                                                                                                 </p>
-                                                                                        
+                                                                                                
                                                                                         {:else}
                                                                                                 <p> 
                                                                                                         <em>
                                                                                                         <li class="fa fa-phone-alt fa-2x"> </li>
-                                                                                                                {telefone2}
+                                                                                                                {telefone1}
                                                                                                         </em>
                                                                                                 </p>
+                                                                                                
                                                                                         {/if}
-                                                                                {/if}
-                                                                        </ul>
+                                                                                        {#if telefone2!="" && telefone2!=null}
+                                                                                                {#if telefone2EhWhatsapp!="" && telefone2EhWhatsapp!=null}
+                                                                                                <p> 
+                                                                                                        <em>
+                                                                                                                <li class="fa-brands fa-whatsapp fa-2x"> </li>
+                                                                                                                        {telefone2}
+                                                                                                        </em>
+                                                                                                        <button class="btn btn-green btn-mini" on:click|preventDefault={ClickContato2}>Mensagem</button>
+                                                                                                        </p>
+                                                                                                
+                                                                                                {:else}
+                                                                                                        <p> 
+                                                                                                                <em>
+                                                                                                                <li class="fa fa-phone-alt fa-2x"> </li>
+                                                                                                                        {telefone2}
+                                                                                                                </em>
+                                                                                                        </p>
+                                                                                                {/if}
+                                                                                        {/if}
+                                                                                </ul>
+                                                                        {:else}
+                                                                                <button class="btn btn-green btn-mini" on:click|preventDefault={VerContato}>Ver contato</button>
+                                                                        {/if}
                                                                         
                                                                 </div>
                                                         {/if}

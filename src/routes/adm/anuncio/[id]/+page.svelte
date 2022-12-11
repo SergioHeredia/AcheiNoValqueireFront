@@ -101,6 +101,19 @@
         let destaqueAtemonth, destaqueAteday, destaqueAteyear;
         let destaqueAtedateString="";
 
+        let TotalView;
+        let TotalDestaqueView;
+        let TotalBuscadoView;
+        let TotalViewTelefone1;
+        let TotalViewTelefone2;
+        let TotalClickTelefone1;
+        let TotalClickTelefone2;
+        let TotalClickSite;
+        let TotalClickFacebook;
+        let TotalClickInstagram;
+        let TotalClickTwitter;
+        let TotalClickTiktok;
+
         
         const  CarregaAnuncio = async () =>
         {
@@ -149,6 +162,19 @@
                     youtube=res.youtube;
                     tags = res.tags.split(",");
                     obs = res.obs;
+
+                    TotalView = res.totalView;
+                    TotalDestaqueView = res.totalDestaqueView;
+                    TotalBuscadoView = res.totalBuscadoView;
+                    TotalViewTelefone1 = res.totalViewTelefone1;
+                    TotalViewTelefone2 =res.totalViewTelefone2;
+                    TotalClickTelefone1 = res.totalClickTelefone1;
+                    TotalClickTelefone2 = res.totalClickTelefone2;
+                    TotalClickSite = res.totalClickSite;
+                    TotalClickFacebook = res.totalClickFacebook;
+                    TotalClickInstagram = res.totalClickInstagram;
+                    TotalClickTwitter = res.totalClickTwitter;
+                    TotalClickTiktok = res.totalClickTiktok;
 
                     if (res.publicadoEm!=null)
                     {
@@ -1124,8 +1150,138 @@
                                         
 
                                     </div>
+                                    {#if publicadoEmdateString!=""}
+                                        <div class="elements-block">
+                                            <div class="inner">
+                                                <h4>Visualizações</h4>
+                                                
+                                                <div class="row field-block">
+                                                    <div class="col-xs-12 col-md-3">
+                                                        <span class="label" >Visualização</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-9">
+                                                        <span class="label">{TotalView}</span>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <div class="row field-block">
+                                                    <div class="col-xs-12 col-md-3">
+                                                        <span class="label" >Visualização em Destaque</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-9">
+                                                        <span class="label">{TotalDestaqueView}</span>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <div class="row field-block">
+                                                    <div class="col-xs-12 col-md-3">
+                                                        <span class="label" >Visualização em Busca</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-9">
+                                                        <span class="label">{TotalBuscadoView}</span>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <div class="row field-block">
+                                                    <div class="col-xs-12 col-md-3">
+                                                        <span class="label" >Visualização de Telefone 1</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-9">
+                                                        <span class="label">{TotalViewTelefone1}</span>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <div class="row field-block">
+                                                    <div class="col-xs-12 col-md-3">
+                                                        <span class="label" >Visualização de Telefone 2</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-9">
+                                                        <span class="label">{TotalViewTelefone2}</span>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <div class="row field-block">
+                                                    <div class="col-xs-12 col-md-3">
+                                                        <span class="label" >Click de Telefone 1</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-9">
+                                                        <span class="label">{TotalClickTelefone1}</span>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <div class="row field-block">
+                                                    <div class="col-xs-12 col-md-3">
+                                                        <span class="label" >Click de Telefone 2</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-9">
+                                                        <span class="label">{TotalClickTelefone2}</span>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <div class="row field-block">
+                                                    <div class="col-xs-12 col-md-3">
+                                                        <span class="label" >Click de Site</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-9">
+                                                        <span class="label">{TotalClickSite}</span>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <div class="row field-block">
+                                                    <div class="col-xs-12 col-md-3">
+                                                        <span class="label" >Click de Facebook</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-9">
+                                                        <span class="label">{TotalClickFacebook}</span>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <div class="row field-block">
+                                                    <div class="col-xs-12 col-md-3">
+                                                        <span class="label" >Click de Instagram</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-9">
+                                                        <span class="label">{TotalClickInstagram}</span>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <div class="row field-block">
+                                                    <div class="col-xs-12 col-md-3">
+                                                        <span class="label" >Click de Twitter</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-9">
+                                                        <span class="label">{TotalClickTwitter}</span>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <div class="row field-block">
+                                                    <div class="col-xs-12 col-md-3">
+                                                        <span class="label" >Click de Tiktok</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-9">
+                                                        <span class="label">{TotalClickTiktok}</span>
+                                                        
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    {/if}
 
                                 </form>
+                                
 
                         </div>
 
