@@ -253,7 +253,7 @@
             </div>
         </div>
    
-
+<!-- 
         <SvelteSeo
                     title="{titulo}"
                     description="{subTitulo}"
@@ -261,7 +261,7 @@
                     keywords={tags}
                     
                     
-                    />
+                    /> -->
 
 
 
