@@ -3,7 +3,6 @@
 
 import axios from "axios";
 
-
 // Create a instance of axios to use the same base url.
 const axiosAPI = axios.create({
   baseURL : import.meta.env.VITE_baseURLAPI // it's not recommended to have this info here.
@@ -17,7 +16,11 @@ axios.defaults.withCredentials = true;
 
 const apiRequest = (method: any, url: any, request: any) => {
 
-  const jwt = localStorage.getItem('jwt');
+  let jwt;
+  if (typeof window !== 'undefined') {
+    jwt = localStorage.getItem('jwt');
+  } 
+   
   //console.log(jwt);
 
   let _authorization = ""

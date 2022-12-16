@@ -34,12 +34,16 @@ export const ObterTodos = async (pageSize=5,pageIndex=1,query=null,categoriaId=n
               ...INITIAL_STATE,
               anuncios
             });
+
+            
   
      
     } catch (error) {
       return error;
     }
   };
+
+  
 
 
   export const ObterTodosDestaque = async (pageSize=5,pageIndex=1,query=null,categoriaId=null,destaque=false,aleatorio = false) => {
