@@ -88,7 +88,7 @@
 </style>
 <div  style="background-color: #f4f4f4 ;">
     <header class="heading style2 text-center">
-        <h2><strong>Categorias</strong> </h2>
+        <h1><strong>Categorias</strong></h1>
         
     </header>
 
@@ -138,7 +138,7 @@
                
 			
 				
-				<a href="#" on:click|preventDefault="{pesquisar(item.id)}">
+				<div on:click|preventDefault="{pesquisar(item.id)}" style="cursor: pointer;">
 					<div class="card text-center justify-content-center">
 						<div class="card-header justify-content-center">
 							<img src="{item.src}" class="mx-auto d-block" alt="{item.figcaption}" width="60px" height="60px" style="width: 60px; height: 60px;">
@@ -151,7 +151,7 @@
 						</div>
 						
 					</div>
-				</a>
+				</div>
 				
 			   
 			</Slidy>

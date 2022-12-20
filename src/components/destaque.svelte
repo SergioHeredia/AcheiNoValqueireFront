@@ -173,7 +173,7 @@ const slidy = {
     <Aguarde />
     {:then}
         <header class="heading style2 text-center">
-            <h2><strong>Em Destaque</strong></h2>
+            <h1><strong>Em Destaque</strong></h1>
             
         </header>
 
