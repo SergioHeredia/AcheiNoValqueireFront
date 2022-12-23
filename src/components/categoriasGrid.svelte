@@ -81,14 +81,14 @@
 
 
 <style>
-	a{
+	/* a{
 		text-decoration-line: none;
-	}
+	} */
     
 </style>
 <div  style="background-color: #f4f4f4 ;">
     <header class="heading style2 text-center">
-        <h1><strong>Categorias</strong></h1>
+        <h2><strong>Categorias</strong></h2>
         
     </header>
 

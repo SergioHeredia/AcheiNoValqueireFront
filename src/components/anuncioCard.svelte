@@ -60,7 +60,7 @@
     export let site;
     export let instagram;
     export let facebook;
-    export let tags;
+    //export let tags;
 
 
     let nomeCategoria;
