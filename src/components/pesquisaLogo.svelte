@@ -20,7 +20,7 @@ import Pesquisa from "../components/pesquisa.svelte";
         <div class="col-12 col-lg-6 col-md-12 col-sm-12 p-xl-3  text-center">
 
             <div>
-                <h1 class="text-uppercase">Conquiste seu cliente!</h1>
+                <h1 class="text-uppercase">Conquiste seu cliente no Valqueire!</h1>
                 <p class="my-3" style="font-size: 21px;">Divulgue sua empresa, serviço, negócio, loja física ou virtual no bairro de Vila Valqueire e arredores e conquiste mais clientes.</p><a class="btn btn-primary btn-lg me-2" role="button" href="/anuncie/valqueire/index.html" style="margin-bottom: 18px;" target="_self">Quero divulgar meu negócio</a>
             </div>
 
